@@ -96,3 +96,4 @@ setInterval(function () {
   //afficher les objets à l'écran
   screen.render();
 }, vitesse);
+console.log("Appuyez sur une touche pour quitter...");
