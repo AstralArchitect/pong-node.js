@@ -45,21 +45,6 @@ const ball = blessed.box({
 screen.append(you);
 screen.append(enemy);
 screen.append(ball);
-// Gérer l'événement de touche pour quitter
-screen.key(['escape'], function(ch, key) {
-  process.exit(0);
-});
-
-// Gérer l'événement de touche pour déplacer la boîte vers le bas
-screen.key('down', function(ch, key) {
-  you.top++;
-  screen.render();
-});
-
-screen.key('up', function(ch, key) {
-  you.top -= 1;
-  screen.render()
-});
 //déplacer la balle
 setInterval(function () {
   //bouger la balle et l'énemie
@@ -96,4 +81,17 @@ setInterval(function () {
   //afficher les objets à l'écran
   screen.render();
 }, vitesse);
-console.log("Appuyez sur une touche pour quitter...");
+screen.key(['escape'], function(ch, key) {
+  process.exit(0);
+});
+
+// Gérer l'événement de touche pour déplacer la boîte vers le bas
+screen.key('down', function(ch, key) {
+  you.top++;
+  screen.render();
+});
+
+screen.key('up', function(ch, key) {
+  you.top -= 1;
+  screen.render()
+});
